@@ -11,11 +11,27 @@ if (!isParse)
     Write("Введено не число");
     return;
 }
-int count = 1;
-WriteLine($"Кубы от 1 до {N}");
-while (count <= N)
+
+if (N < 0)
 {
-    double result = Math.Pow(count, 3);
-    count = count + 1;
-    Write($"{result} ");
+    WriteLine($"Кубы от -1 до {N}");
+    int count = -1;
+    while (count >= N)
+    {
+        double result = Math.Pow(count, 3);
+        count = count - 1;
+        Write($"{result} ");
+    }
+}
+
+if (N > 0)
+{
+    WriteLine($"Кубы от 1 до {N}");
+    int count = 1;
+    while (count <= N)
+    {
+        double result = Math.Pow(count, 3);
+        count = count + 1;
+        Write($"{result} ");
+    }
 }
